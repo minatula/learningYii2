@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7.25
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_DATABASE: db
+      MYSQL_PASSWORD: root
+    volumes:
+      - ./db:/var/lib/mysql
+    ports:
+      - "127.0.0.1:53306:3306"
+  php:
+    build: ./dockerfiles/php
+    ports:
+      - "8080:80"
+    volumes:
+      - ./yii:/var/www/html
+    links:
+      - db
+    depends_on:
+      - db
