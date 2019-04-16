@@ -74,3 +74,4 @@ RUN cd /tmp && \
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 RUN chmod +x /usr/local/bin/composer
+RUN a2enmod rewrite && service apache2 restart

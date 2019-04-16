@@ -16,6 +16,8 @@ services:
       - "8080:80"
     volumes:
       - ./yii:/var/www/html
+      - ./apache/apache2.conf:/etc/apache2/apache2.conf
+      - ./apache/sites-available:/etc/apache2/sites-available
 #    links:
 #      - db
 #    depends_on:
