@@ -9,7 +9,7 @@ $I->seeLink('Join', '/site/join');
 $I->seeLink('Login', '/site/login');
 
 $I->amOnPage('/site/join');
-$I->see('Join us', 'h1');
+$I->see('Join page', 'h1');
 
 $I->amOnPage('/site/login');
-$I->see('Log in', 'h1');
+$I->see('Login page', 'h1');
